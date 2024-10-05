@@ -1,0 +1,50 @@
+{
+    "plugins\/groupe\/desktop\/php\/groupe.php": {
+        "Ajouter un groupe": "Ajouter un groupe",
+        "Rechercher": "Rechercher",
+        "Ajouter des Chaînes": "Ajouter des Chaînes",
+        "Configuration": "Configuration",
+        "Mes groupes": "Mes groupes",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Configuration avancée": "Configuration avancée",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Nom de l'équipement groupe": "Nom de l'équipement groupe",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Ajouter un équipement": "Ajouter un équipement",
+        "Activer les actions": "Activer les actions",
+        "Equipements ": "Equipements ",
+        "Nom": "Nom",
+        "Commande Etat": "Commande Etat",
+        "Commande ON": "Commande ON",
+        "Commande OFF": "Commande OFF",
+        "Inverser": "Inverser",
+        "Effacer": "Effacer",
+        "Nom de la commande qui apparait dans la modale": "Nom de la commande qui apparait dans la modale",
+        "Icône On": "Icône On",
+        "Icône": "Icône",
+        "Icône Off": "Icône Off",
+        "Action": "Action",
+        "Gestion": "Gestion",
+        "Ajouter": "Ajouter",
+        "Mes Equipements": "Mes Equipements"
+    },
+    "plugins\/groupe\/core\/class\/groupe.class.php": {
+        "Nombre On": "Nombre On",
+        "Nombre Off": "Nombre Off",
+        "Etat": "Etat",
+        "Dernier déclencheur": "Dernier déclencheur",
+        "All on": "All on",
+        "All off": "All off",
+        "Commande déclencheur inconnue : #945#": "Commande déclencheur inconnue : #945#"
+    },
+    "plugins\/groupe\/desktop\/js\/groupe.js": {
+        "Tester": "Tester",
+        "Nom": "Nom"
+    }
+}

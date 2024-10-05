@@ -1,0 +1,50 @@
+{
+    "plugins\/groupe\/desktop\/php\/groupe.php": {
+        "Ajouter un groupe": "Add group",
+        "Rechercher": "Search",
+        "Ajouter des Chaînes": "Add Channels",
+        "Configuration": "Setup",
+        "Mes groupes": "My groups",
+        "Sauvegarder": "Save",
+        "Supprimer": "Remove",
+        "Configuration avancée": "Advanced configuration",
+        "Equipement": "Device",
+        "Commandes": "Commands",
+        "Nom de l'équipement groupe": "Group device name",
+        "Objet parent": "Parent object",
+        "Aucun": "None",
+        "Catégorie": "Category",
+        "Activer": "Enable",
+        "Visible": "Visible",
+        "Ajouter un équipement": "Add device",
+        "Activer les actions": "Enable actions",
+        "Equipements ": "Devices",
+        "Nom": "Name",
+        "Commande Etat": "State command",
+        "Commande ON": "ON command",
+        "Commande OFF": "OFF command",
+        "Inverser": "Invert",
+        "Effacer": "Delete",
+        "Nom de la commande qui apparait dans la modale": "Command name in the modal",
+        "Icône On": "On icon",
+        "Icône": "Icon",
+        "Icône Off": "Off icon",
+        "Action": "Action",
+        "Gestion": "Management",
+        "Ajouter": "Add",
+        "Mes Equipements": "My devices"
+    },
+    "plugins\/groupe\/core\/class\/groupe.class.php": {
+        "Nombre On": "Count On",
+        "Nombre Off": "Count Off",
+        "Etat": "State",
+        "Dernier déclencheur": "Last trigger",
+        "All on": "All on",
+        "All off": "All off",
+        "Commande déclencheur inconnue : #945#": "Unknown trigger command: #945#"
+    },
+    "plugins\/groupe\/desktop\/js\/groupe.js": {
+        "Tester": "Test",
+        "Nom": "Name"
+    }
+}
