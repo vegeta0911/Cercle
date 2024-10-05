@@ -1,0 +1,41 @@
+/*
+Error: Invalid CSS after "...ponents/mixins"": expected "{", was ";"
+        on line 7 of Y:\plugins\groupe\docs\assets\css\materialize.scss
+
+2: # This is the Front Matter block
+3: ---
+4: 
+5: // Mixins
+6: // @import "components/prefixer";
+7: @import "components/mixins";
+8: @import "components/color";
+9: 
+10: // Variables;
+11: @import "components/variables";
+12: 
+
+Backtrace:
+Y:\plugins\groupe\docs\assets\css\materialize.scss:7
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:1278:in `expected'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:1208:in `expected'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:1203:in `tok!'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:677:in `block'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:670:in `ruleset'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:696:in `block_child'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:686:in `block_contents'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:137:in `stylesheet'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/scss/parser.rb:41:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/engine.rb:414:in `_to_tree'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/engine.rb:290:in `render'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/exec/sass_scss.rb:400:in `run'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/lib/ruby/gems/2.4.0/gems/sass-3.5.3/bin/sass:13:in `<top (required)>'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/bin/sass:23:in `load'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2019/ruby/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ponents/mixins\"\": expected \"{\", was \";\"\A         on line 7 of Y:\plugins\groupe\docs\assets\css\materialize.scss\A \A 2: # This is the Front Matter block\A 3: ---\A 4: \A 5: // Mixins\A 6: // @import \"components/prefixer\";\A 7: @import \"components/mixins\";\A 8: @import \"components/color\";\A 9: \A 10: // Variables;\A 11: @import \"components/variables\";\A 12: "; }
