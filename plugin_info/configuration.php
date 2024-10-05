@@ -1,0 +1,67 @@
+<?php
+/* This file is part of Jeedom.
+ *
+ * Jeedom is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Jeedom is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+require_once __DIR__ . '/../../../core/php/core.inc.php';
+include_file('core', 'authentification', 'php');
+if (!isConnect()) {
+    include_file('desktop', '404', 'php');
+    die();
+}
+?>
+<br/>
+<?php
+$file = __DIR__.'/../data/backup.md' ;
+    //echo $file;
+	if (!is_file($file)) {
+		$level = 'danger';
+		$message = 'La vérification de la mise à jour a échoué. Cliquer sur le bouton qui suit , choisir un backup de Jeedom valide et attendre (cela peut durer quelques minutes selon la taille du backup)';
+	} else {
+		$level = 'success';
+		$message = 'Le plugin est à jour. Ne pas cliquer sur le bouton ci-dessous hormis si vous savez ce que vous faites !';			
+	}
+?>
+<legend class="<?php echo $level ?>">
+Gestion de la mise à jour post V4 - V4.5
+</legend>
+<form class="form-horizontal">
+
+	<div class="alert alert-<?php echo $level ?>">{{<?php echo $message ?><br/>}}</div>	
+	
+	
+    <fieldset>
+		<div class="col-sm-6 col-xs-12">
+			<span class="btn btn-danger btn-file" style="width:100%;margin-bottom:10px;">
+				<i class="fas fa-cloud-upload-alt"></i> {{Mettre à jour les fichiers }}<input id="bt_majConfig" type="file" name="file" data-url="plugins/groupe/core/ajax/groupe.ajax.php?action=launchUpdateFile&jeedom_token=<?php echo ajax::getToken(); ?>">
+			</span>			
+		</div>	
+	</fieldset>
+</form>	
+
+<script>
+	$('#bt_majConfig').fileupload({
+	  dataType: 'json',
+	  replaceFileInput: false,
+	  done: function (e, data) {
+		if (data.result.state != 'ok') {
+		  $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+		  return;
+		}
+		  $('#md_modal').dialog('close');
+		  $('#md_modal').dialog({title: "{{Configuration du plugin}}"}).load('index.php?v=d&p=plugin&ajax=1&id=groupe').dialog('open');
+	  }
+	});
+</script>
