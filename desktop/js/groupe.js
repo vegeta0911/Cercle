@@ -123,6 +123,11 @@ function printEqLogic(_eqLogic) {
 	if (!isset(_eqLogic.configuration)) {
 	   _eqLogic.configuration = {};
 	}
+
+	if(_eqLogic.configuration.widgetType == "") {
+		_eqLogic.configuration.widgetType += 'icon';
+	}
+	
 	if(!isset(_eqLogic.configuration.widgetType)) {
 	   $('.icon').show();
 	 } else {
