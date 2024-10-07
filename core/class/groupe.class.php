@@ -300,7 +300,7 @@ class groupe extends eqLogic {
 	public function saveConfigFolder() {		
 		try {
 			$cmd = system::getCmdSudo() . 'mkdir -p ' . __DIR__ . '/../../data;';
-			$cmd .= 'cd  ' . __DIR__ . '/../../../backup ;';
+			$cmd .= 'cd  /var/www/html/backup';
 			$cmd .= system::getCmdSudo() . 'tar -xvzf $(ls *.gz | head -1) -C ../plugins/groupe/data ./plugins/groupe/core/template/img/ --strip-components 5;';
 			$cmd .= system::getCmdSudo() . 'touch ' . __DIR__ . '/../../data/backup.md; ';
 			$dir = __DIR__ . '/../template/img';
