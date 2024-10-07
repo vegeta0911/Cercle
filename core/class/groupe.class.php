@@ -304,6 +304,7 @@ class groupe extends eqLogic {
 			$cmd .= system::getCmdSudo() . 'tar -xvzf $(ls *.gz | head -1) -C ../plugins/groupe/data ./plugins/groupe/core/template/img/ --strip-components 5;';
 			$cmd .= system::getCmdSudo() . 'touch ' . __DIR__ . '/../../data/backup.md; ';
 			$dir = __DIR__ . '/../template/img';
+			log::add('groupe','info', 'Erreur lors de l\'update') ;
 			if(is_dir($dir)) {
 				$cmd .= system::getCmdSudo() . 'rm -R ' . $dir;
 			}
