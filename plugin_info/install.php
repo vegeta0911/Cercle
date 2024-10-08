@@ -42,12 +42,12 @@ function groupe_install() {
 				$listener->save();				
 			}
 			$group->save();
-			$file = __DIR__.'/../data/backup.md';
+			/*$file = __DIR__.'/../data/backup.md';
 			$dir = __DIR__ . '/../core/template/img';
 			if (!is_file($file) && !is_dir($dir)) {
 				$cmd = system::getCmdSudo() . ' touch ' . __DIR__ . '/../data/backup.md;';	
 				com_shell::execute($cmd);				
-			}
+			}*/
 		} catch (Exception $e) {
 				throw new Exception(__('erruer ',  __FILE__));
 		}
@@ -93,7 +93,7 @@ function groupe_update() {
 		} catch (Exception $e) {
 				throw new Exception(__('erreur ' . $e,  __FILE__));
 		}
-		$file = __DIR__.'/../data/backup.md';
+		/*$file = __DIR__.'/../data/backup.md';
 		$dir = __DIR__ . '/../core/template/img';
 		if (!is_file($file) && is_dir($dir)) {
 			try {			
@@ -110,7 +110,7 @@ function groupe_update() {
 		} elseif(!is_file($file)) {
 			$cmd = system::getCmdSudo() . ' touch ' . __DIR__ . '/../data/backup.md;';	
 			com_shell::execute($cmd);
-		}		
+		}*/		
 	}	
 }
 
