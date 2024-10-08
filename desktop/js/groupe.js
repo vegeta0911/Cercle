@@ -18,9 +18,8 @@
 $("#table_cmd_grp").sortable({axis: "y", cursor: "move", items: ".cmd", placeholder: "ui-state-highlight", tolerance: "intersect", forcePlaceholderSize: true});
 
 $("body").delegate(".listCmdInfo", 'click', function() {
-	var type = $(this).attr('data-type');	
-	if(type == 'undefined'){type = 'info'}
-	var el = $(this).closest('.' + type).find('.cmdAttr[data-l1key=configuration][data-l2key=state]');
+	var type = $(this).attr('data-type');
+	var el = $(this).closest('.' + type).find('.cmdAttr[data-type='+type+'][data-l1key=configuration][data-l2key=state]');
     jeedom.cmd.getSelectModal({cmd: {type: 'info', subtype: 'binary'}}, function(result) {
         el.value(result.human);
     });
