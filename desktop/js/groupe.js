@@ -80,7 +80,7 @@ function changeImg() {
 
  $('body').undelegate('.icone .iconeOn[data-l1key=chooseIcon]', 'click').delegate('.icone .iconeOn[data-l1key=chooseIcon]', 'click', function () {
     var mode = $(this).closest('.icone');
-    chooseIcon(function (_icon) {
+   jeedomUtils.chooseIcon(function (_icon) {
         mode.find('.iconeAttrOn[data-l2key=iconOn]').empty().append(_icon);
     });
 });
@@ -91,7 +91,7 @@ function changeImg() {
 
  $('body').undelegate('.icone .iconeOff[data-l1key=chooseIcon]', 'click').delegate('.icone .iconeOff[data-l1key=chooseIcon]', 'click', function () {
     var mode = $(this).closest('.icone');
-    chooseIcon(function (_icon) {
+    jeedomUtils.chooseIcon(function (_icon) {
         mode.find('.iconeAttrOff[data-l2key=iconOff]').empty().append(_icon);
     });
 });
