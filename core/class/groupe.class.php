@@ -217,7 +217,7 @@ class groupe extends eqLogic {
 		return $cmds;
 	}
 	
-	public function actionAll($_id, $_state=false){
+	public static function actionAll($_id, $_state=false){
 		$groupe = groupe::byId($_id);
 		if ($_state) {
 			$state = $_state;
