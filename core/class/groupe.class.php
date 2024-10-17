@@ -202,7 +202,7 @@ class groupe extends eqLogic {
 					$last = $status->execCmd();
 
 				}				
-				
+				log::add('groupe', 'debug', 'visible :' . $one->getConfiguration('isVisibles'));
 				log::add('groupe', 'debug', 'state :' . $state);
 				log::add('groupe', 'debug', 'name :' . $cmd->getName());
 				log::add('groupe', 'debug', 'reverse :' . $groupe->getConfiguration('reverse'));
@@ -210,7 +210,7 @@ class groupe extends eqLogic {
 					$state = $state == 0 ?  1 : 0;
 				}
 				
-				array_push($cmds,array($state,str_replace('#', '', $one->getConfiguration('ON')),str_replace('#', '', $one->getConfiguration('OFF')),$active,$name_on,$name_off,$last_seen,$one->getID(),$one->getName()));
+				array_push($cmds,array($state,str_replace('#', '', $one->getConfiguration('ON')),str_replace('#', '', $one->getConfiguration('OFF')),$active,$name_on,$name_off,$last_seen,$one->getID(),$one->getName(),$one->getConfiguration('isVisibles')));
 			}
 		}	
 		usort($cmds, array('groupe','compareCmds'));
