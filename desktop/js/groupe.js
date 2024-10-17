@@ -249,6 +249,8 @@ function addCmdToTable(_cmd) {
 		tr += '</td><td>';
 		tr += '<input type="checkbox" class="tooltips cmdAttr" data-l1key="configuration" data-l2key="reverse">';
 		tr += '</td><td>';
+		tr += '<input type="checkbox" class="tooltips cmdAttr" data-l1key="configuration" data-l2key="isVisibles" checked>';
+		tr += '</td><td>';
 		tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i>';
 		tr += '</td>';
 		tr += '</tr>';
