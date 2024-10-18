@@ -231,6 +231,9 @@ function addCmdToTable(_cmd) {
 		if (!isset(_cmd.subType)) {
 			_cmd.subType = "";
 		}
+		if (!isset(_cmd.Type)) {
+			_cmd.Type = "";
+		}
 		var tr = '<tr class="cmd ' + _cmd.type + '" data-cmd_id="' + init(_cmd.id) + '">';
 		tr += '<td>';
 		tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display : none;">';
