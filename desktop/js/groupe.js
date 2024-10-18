@@ -19,6 +19,9 @@ $("#table_cmd_grp").sortable({axis: "y", cursor: "move", items: ".cmd", placehol
 
 $("body").delegate(".listCmdInfo", 'click', function() {
 	var type = $(this).attr('data-type');
+	if(type == undefined){
+		type = "info";
+	}
 	var el = $(this).closest('.' + type).find('.cmdAttr[data-type='+type+'][data-l1key=configuration][data-l2key=state]');
     jeedom.cmd.getSelectModal({cmd: {type: 'info', subtype: 'binary'}}, function(result) {
         el.value(result.human);
