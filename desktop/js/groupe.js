@@ -20,7 +20,7 @@ $("#table_cmd_grp").sortable({axis: "y", cursor: "move", items: ".cmd", placehol
 $("body").delegate(".listCmdInfo", 'click', function() {
 	var type = $(this).attr('data-type');
 	if(type == undefined){
-		type = "info";
+	    type = "info";
 	}
 	var el = $(this).closest('.' + type).find('.cmdAttr[data-type='+type+'][data-l1key=configuration][data-l2key=state]');
     jeedom.cmd.getSelectModal({cmd: {type: 'info', subtype: 'binary'}}, function(result) {
@@ -30,6 +30,9 @@ $("body").delegate(".listCmdInfo", 'click', function() {
 
 $("body").delegate(".listCmdActionOff", 'click', function() {
     var type = $(this).attr('data-type');
+    if(type == undefined){
+	type = "info";
+    }
     var el = $(this).closest('.' + type).find('.cmdAttr[data-l1key=configuration][data-l2key=OFF]');
     jeedom.cmd.getSelectModal({cmd: {type: 'action'}}, function(result) {
         el.value(result.human);
@@ -38,6 +41,9 @@ $("body").delegate(".listCmdActionOff", 'click', function() {
 
 $("body").delegate(".listCmdActionOn", 'click', function() {
     var type = $(this).attr('data-type');
+    if(type == undefined){
+	type = "info";
+    }
     var el = $(this).closest('.' + type).find('.cmdAttr[data-l1key=configuration][data-l2key=ON]');
     jeedom.cmd.getSelectModal({cmd: {type: 'action'}}, function(result) {
         el.value(result.human);
