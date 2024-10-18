@@ -126,6 +126,7 @@ $eqLogics = eqLogic::byType('groupe');
 										<th class="action" >{{Commande OFF}}</th>
 										<th style="width: 5%;">{{Inverser}}</th>
 										<th style="width: 5%;">{{Afficher}}</th>
+										<th style="width: 5%;">{{Effacer}}</th>
 									</tr>
 								</thead>
 								<tbody>
