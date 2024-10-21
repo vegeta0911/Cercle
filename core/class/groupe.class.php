@@ -202,7 +202,7 @@ class groupe extends eqLogic {
 					$last = $status->execCmd();
 
 				}				
-				
+				log::add('groupe', 'debug', 'visible :' . $one->getConfiguration('isVisibles'));
 				log::add('groupe', 'debug', 'state :' . $state);
 				log::add('groupe', 'debug', 'name :' . $cmd->getName());
 				log::add('groupe', 'debug', 'reverse :' . $groupe->getConfiguration('reverse'));
@@ -210,14 +210,14 @@ class groupe extends eqLogic {
 					$state = $state == 0 ?  1 : 0;
 				}
 				
-				array_push($cmds,array($state,str_replace('#', '', $one->getConfiguration('ON')),str_replace('#', '', $one->getConfiguration('OFF')),$active,$name_on,$name_off,$last_seen,$one->getID(),$one->getName()));
+				array_push($cmds,array($state,str_replace('#', '', $one->getConfiguration('ON')),str_replace('#', '', $one->getConfiguration('OFF')),$active,$name_on,$name_off,$last_seen,$one->getID(),$one->getName(),$one->getConfiguration('isVisibles')));
 			}
 		}	
 		usort($cmds, array('groupe','compareCmds'));
 		return $cmds;
 	}
 	
-	public function actionAll($_id, $_state=false){
+	public static function actionAll($_id, $_state=false){
 		$groupe = groupe::byId($_id);
 		if ($_state) {
 			$state = $_state;
@@ -300,10 +300,11 @@ class groupe extends eqLogic {
 	public function saveConfigFolder() {		
 		try {
 			$cmd = system::getCmdSudo() . 'mkdir -p ' . __DIR__ . '/../../data;';
-			$cmd .= 'cd  ' . __DIR__ . '/../../../../backup ;';
+			$cmd .= 'cd ' . __DIR__ . '/../../backup/';
 			$cmd .= system::getCmdSudo() . 'tar -xvzf $(ls *.gz | head -1) -C ../plugins/groupe/data ./plugins/groupe/core/template/img/ --strip-components 5;';
 			$cmd .= system::getCmdSudo() . 'touch ' . __DIR__ . '/../../data/backup.md; ';
 			$dir = __DIR__ . '/../template/img';
+			log::add('groupe','info', 'Erreur lors de l\'update') ;
 			if(is_dir($dir)) {
 				$cmd .= system::getCmdSudo() . 'rm -R ' . $dir;
 			}
