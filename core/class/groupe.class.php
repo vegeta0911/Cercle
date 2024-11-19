@@ -124,6 +124,18 @@ class groupe extends eqLogic {
 		$status->setType('info');
 		$status->setSubType('string');
 		$status->save();
+	    
+                $status = $this->getCmd(null, 'affiche');
+		if (!is_object($status)) {
+			$status = new groupeCmd();
+			$status->setName(__('nombre afficher', __FILE__));
+							
+		}
+		$status->setLogicalId('affiche');
+		$status->setEqLogic_id($this->getId());
+		$status->setType('info');
+		$status->setSubType('numeric');
+		$status->save();
 
 		if ($this->getIsEnable() == 1) {
 			$listener = listener::byClassAndFunction('groupe', 'pull', array('groupe_id' => intval($this->getId())));
@@ -170,7 +182,10 @@ class groupe extends eqLogic {
 			$this->refreshWidget();
 		}			
 	}
-	
+	public function getaff($g) {
+		$this->checkAndUpdateCmd('affiche', $g);
+		$this->refreshWidget();
+	}
 	public static function getCmdEq($_id){
 		$groupe = groupe::byId($_id);
 
@@ -257,6 +272,8 @@ class groupe extends eqLogic {
 	public function get_info(){
 		try{
 			$infos = array();
+			$g=0;
+			$h=0;
 			$i=0;
 			$j=0;
 			$z=0;
@@ -275,6 +292,11 @@ class groupe extends eqLogic {
 					} else {
 						($val == 0) ? $i++ : $j++;
 					}
+					if($trigger->getConfiguration('isVisibles') == 0) {
+						($val == 0) ? $g++ : $h++;
+					} else {
+						($val == 0) ? $h++ : $g++;
+					}
 				}
 			}
 			$name =  $this->getName();
@@ -288,6 +310,10 @@ class groupe extends eqLogic {
 				($this->getConfiguration('stateInverse',0) == 0) ? $etat = 1 : $etat=0;
 				self::getState($i,$j,$etat,$name);
 			}
+			if ($g >= 0){
+				self::getaff($g);    
+			}
+			
 			$data = array($etat, $i, $j,$z);
 			if($_id = true) {
 				return($data);				
